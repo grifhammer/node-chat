@@ -1,0 +1,20 @@
+{
+  "name": "NodeChat",
+  "version": "0.0.1",
+  "description": "Simple instant messanger program in node,js",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "chat"
+  ],
+  "author": "Robert Bunch",
+  "license": "MIT",
+  "dependencies": {
+    "socket.io": "^1.0.6",
+    "express": "^4.0"
+  },
+  "engine": "node 0.4.1"  
+}
