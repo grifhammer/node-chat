@@ -6,7 +6,7 @@
 	<script type="text/javascript">
 		var socketio = io.connect("127.0.0.1:8000");
 		socketio.on('message_to_client', function (data){
-			document.getElementById('chat-window').innerHTML += "<hr />" + data["message"] ;
+			document.getElementById('chat-window').innerHTML = "<hr />" + data["message"] + document.getElementById('chat-window').innerHTML;
 		});
 
 		function sendMessage(){
