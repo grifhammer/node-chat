@@ -3,9 +3,22 @@
 <head>
 	<title>Node Chat</title>
 	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+	<script type="text/javascript">
+		var socketio = io.connect("127.0.0.1:8000");
+		socketio.on('message_to_client', function (data){
+			document.getElementById('chat-window').innerHTML = "<hr />" + data["message"];
+		});
+
+		function sendMessage(){
+			var message = document.getElementById('message').value
+			socketio.emit('message_to_server', {
+				message: message
+			});
+		}
+	</script>
 </head>
 <body>
-	<input type="text">
+	<input type="text" id="message">
 	<button onclick="sendMessage()">Send Message!</button>
 	<div id="chat-window"></div>
 </body>
